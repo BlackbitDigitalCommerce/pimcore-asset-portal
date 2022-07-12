@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "support": {
     "source": "https://shop.blackbit.com/pimcore-plugin-digital-asset-management-dam/",
-    "docs": "https://pimcore.blackbit.de/Blackbit/1.pimcore/Handb%C3%BCcher/DAM-Plugin.pdf"
+    "docs": "https://pimcore.blackbit.com/Blackbit/1.pimcore/Handb%C3%BCcher/Pimcore-Asset-Portal.pdf"
   },
   "license": "GPL-3.0-or-later",
   "type": "pimcore-bundle",
