@@ -2,6 +2,5 @@ pandoc README.md \
 -V linkcolor:blue \
 -V geometry:a4paper \
 -V geometry:margin=2cm \
--V mainfont:"Calibri" \
--V monofont:"Fira Code" \
+-V documentclass:scrreprt \
 -o README.pdf
