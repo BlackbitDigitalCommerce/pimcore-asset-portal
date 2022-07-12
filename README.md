@@ -6,6 +6,7 @@ view – especially for marketing teams and clients – on all assets managed in
 ![Overview](./img/overview.jpg)
 
 It is accessible via `http(s)://YOUDOMAIN/dam` and supports:
+
 - Login / Permissions for asset folders
 - Organization of assets
 - Searching assets (full-text search incl. asset metadata, properties etc.)
@@ -21,12 +22,9 @@ For a first impression, use the following demo installation.
 
 User: `dam-admin` | Password: `demo`
 
-> Notice: This demo gets reset on regular basis. 
-
+> Notice: This demo gets reset on regular basis.
 
 ## Installation
-
-### Composer
 
 To get the plugin code you have to [buy the plugin](https://shop.blackbit.com/pimcore-plugin-digital-asset-management-dam/) or write an email to [info@blackbit.de](mailto:info@blackbit.de).
 
@@ -129,7 +127,7 @@ When hovering over an item (folder or asset), several item options are shown (de
 
 - Assign [collection](#collections) to the item
 - Download asset to download the asset directly in list view
-- [Share item](#sharing]
+- [Share item](#sharing)
 - Relocate asset to a different folder. When clicking the button, a folder tree opens to select the new location for the asset.
 - Delete the asset.
 
@@ -163,7 +161,7 @@ Following functions are available via the item function section:
 
 - Assign [collection](#collections) to the item
 - Download original asset file
-- [Share item](#sharing]
+- [Share item](#sharing)
 - Relocate asset to a different folder. When clicking the button, a folder tree opens to select the new location for the asset
 - Edit asset (only available for images and if [activated](#inline-image-editing))
 - Upload new version of the asset (e.g. replace the image with a better quality image)
@@ -173,7 +171,7 @@ Following functions are available via the item function section:
 
 In the top left area the asset's system information like creation or modification date, size, asset type and exif data (if available) get shown.
 
-## Convert and Download Thumbnails
+### Convert and Download Thumbnails
 
 For images, in the bottom left area of the detail page, converting options are available. Converting options (like size or format) can be set manually or an [existing preset](#configure-download-formats) can be used to convert images and download it. 
 
@@ -182,6 +180,7 @@ For images, in the bottom left area of the detail page, converting options are a
 There are two ways for uploading assets in the list view:
 
 ![Upload](./img/upload.jpg)
+
 - Via drag & drop to the browser window
 - Via the Upload Dialog with the options:
     - Open Upload Dialog (click directly on upload button)
@@ -226,7 +225,7 @@ Collections can be assigned to assets at several places in the DAM Frontend:
 
 ![Assign Collection](./img/collections2.jpg)
 
-#### Share Collections
+#### Share Collections {#sharing}
 
 There are two ways of sharing collections.
 
@@ -241,7 +240,7 @@ In this dialog the users who have access to the collection can be selected. Two 
 - View: Only list the assets of the collection and use the collection for filtering. No editing (like adding and removing assets to the collection) is possible.
 - Edit: The user can also add assets to and remove assets from the collection. Changes are visible to all users.
 
-### 2) Share Collections with external users
+### Share Collections with external users
 
 In addition to sharing collections with other users, they can also be shared with external users.
 
@@ -373,7 +372,7 @@ It is possible to preconfigure available download formats for image and video as
 
 In addition to the static YAML configuration it is possible to override permissions based on events listeners. By doing so, the application can add/remove permissions, such as the download feature, based on asset metadata or complex user permissions.
 
-## Example 1: Hide/Remove Download Functionality
+### Example 1: Hide/Remove Download Functionality
 
 ```php
 class AssetPortalListener implements EventSubscriberInterface
@@ -395,7 +394,7 @@ class AssetPortalListener implements EventSubscriberInterface
 }
 ```
 
-## Example 2: Metadata Change Hook
+### Example 2: Metadata Change Hook
 
 By overriding the `pimcore_dam.metadata_change.hook` service it is possible to dynamically change the permissions for editable metadata fields (portal detail page, batch assignment view).
 
