@@ -16,13 +16,8 @@ It is accessible via `http(s)://YOUDOMAIN/dam` and supports:
 - Extending main menu with additional items to implement custom features
 
 ## Demo
-For a first impression, use the following demo installation. 
 
-[https://demo-dam.pimcore.org/dam/login](https://demo-dam.pimcore.org/dam/login)
-
-User: `dam-admin` | Password: `demo`
-
-> Notice: This demo gets reset on regular basis.
+Please write an email to [info@blackbit.de](mailto:info@blackbit.de) to request demo access.
 
 ## Installation
 
