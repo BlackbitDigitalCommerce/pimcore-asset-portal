@@ -6,6 +6,7 @@
     "source": "https://shop.blackbit.com/pimcore-plugin-digital-asset-management-dam/",
     "docs": "https://pimcore.blackbit.com/Blackbit/1.pimcore/Handb%C3%BCcher/Pimcore-Asset-Portal.pdf"
   },
+  "homepage": "https://pimcore.blackbit.com/",
   "license": "GPL-3.0-or-later",
   "type": "pimcore-bundle",
   "authors": [
