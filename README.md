@@ -15,6 +15,8 @@ It is accessible via `http(s)://YOUDOMAIN/dam` and supports:
 - Uploading / Editing assets (if permitted to user)
 - Extending main menu with additional items to implement custom features
 
+This manual is also available as [PDF](https://pimcore.blackbit.com/Blackbit/1.pimcore/Handb%C3%BCcher/Pimcore-Asset-Portal.pdf).
+
 ## Demo
 
 Please write an email to [info@blackbit.de](mailto:info@blackbit.de) to request demo access.
