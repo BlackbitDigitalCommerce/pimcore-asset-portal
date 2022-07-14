@@ -1,7 +1,6 @@
 # Pimcore Brand and Asset Portal
 
-Pimcore Asset Portal is an image library for marketing teams. It offers an alternative 
-view – especially for marketing teams and clients – on all assets managed in Pimcore.
+Pimcore Asset Portal is an image library for marketing teams. It offers an alternative view – especially for marketing teams and clients – on all assets managed in Pimcore.
 
 ![Overview](./img/overview.jpg)
 
@@ -25,7 +24,9 @@ Please write an email to [info@blackbit.de](mailto:info@blackbit.de) to request 
 
 To get the plugin code you have to [buy the plugin](https://shop.blackbit.com/pimcore-plugin-digital-asset-management-dam/) or write an email to [info@blackbit.de](mailto:info@blackbit.de).
 
-You then either get access to the bundle's [Bitbucket repository](https://bitbucket.org/blackbitwerbung/pimcore-plugins-dam) or you get the plugin code as a zip file. Accessing the Bitbucket repository has the advantage that you will always see changes to the plugin in the pull requests and are able to update to a new version yourself - please visit [this page](https://shop.blackbit.de/de/service-xt-commerce/bitbucket-zugriff-xt-commerce-plugin-entwicklung) if this sounds interesting to you - if it does, please send us the email address of your BitBucket account so we can allow access to the repository.
+You then either get access to the bundle's [Bitbucket repository](https://bitbucket.org/blackbitwerbung/pimcore-plugins-dam) or you get the plugin code as a zip file. Accessing the Bitbucket repository has the advantage that you will always see changes to the plugin in the pull requests and are able
+to update to a new version yourself - please visit [this page](https://shop.blackbit.de/de/service-xt-commerce/bitbucket-zugriff-xt-commerce-plugin-entwicklung) if this sounds interesting to you - if it does, please send us the email address of your BitBucket account so we can allow access to the
+repository.
 
 When we allow your account to access our repository, please add the repository to the `composer.json` in your Pimcore root folder (see [Composer repositories](https://getcomposer.org/doc/05-repositories.md#vcs)):
 
@@ -170,7 +171,7 @@ In the top left area the asset's system information like creation or modificatio
 
 ### Convert and Download Thumbnails
 
-For images, in the bottom left area of the detail page, converting options are available. Converting options (like size or format) can be set manually or an [existing preset](#configure-download-formats) can be used to convert images and download it. 
+For images, in the bottom left area of the detail page, converting options are available. Converting options (like size or format) can be set manually or an [existing preset](#configure-download-formats) can be used to convert images and download it.
 
 ### Upload assets {#asset-upload}
 
@@ -247,7 +248,8 @@ After installation, the bundle is ready to use. You can change the following con
 
 ### Permissions
 
-The user management of the bundle is based on Pimcore's user management. This means that the same credentials and permissions are used as for Pimcore backend users. Visibility and permissions (like move, delete or edit) for assets are configurable with standard Pimcore element workspaces. See [Pimcore Docs](https://pimcore.com/docs/pimcore/current/Development_Documentation/Administration_of_Pimcore/Users_and_Roles.html) for details. Role-based permissions are supported.
+The user management of the bundle is based on Pimcore's user management. This means that the same credentials and permissions are used as for Pimcore backend users. Visibility and permissions (like move, delete or edit) for assets are configurable with standard Pimcore element workspaces.
+See [Pimcore Docs](https://pimcore.com/docs/pimcore/current/Development_Documentation/Administration_of_Pimcore/Users_and_Roles.html) for details. Role-based permissions are supported.
 
 In addition to that, the portal comes with a few additional permissions to configure access to certain features. These permissions are also configured in the user / role permissions:
 
@@ -258,13 +260,15 @@ In addition to that, the portal comes with a few additional permissions to confi
 
 ### Feature Configuration
 
-Feature Configuration takes place in standard Symfony configuration files(e.g. `/config/packages/config.yaml` (Pimcore >= 10) or `app/configc/config.yml` in Pimcore <= 6). A few features with additional explanation are listed below. You can get a list of all available configurations via `bin/console config:dump-reference BlackbitAssetPortalBundle`.
+Feature Configuration takes place in standard Symfony configuration files(e.g. `/config/packages/config.yaml` (Pimcore >= 10) or `app/configc/config.yml` in Pimcore <= 6). A few features with additional explanation are listed below. You can get a list of all available configurations
+via `bin/console config:dump-reference BlackbitAssetPortalBundle`.
 
 #### Customize appearance
 
 It is possible to customize the appearance of the portal by injecting custom CSS and JS files by using the configurations `asset_portal.frontend.customize.css`,
 `asset_portal.frontend.customize.js`, `asset_portal.backend.customize.css` and
 `asset_portal.backend.customize.js`, e.g.
+
 ```yaml
 asset_portal:
   frontend:
@@ -282,7 +286,7 @@ Translations are based on the user's language, all translations are located in P
 Depending on your localizaton settings the user language might not be available in `Shared Translations` (e.g Pimcore user language is `en`, in shared translations there is only `en_GB`, `en_US`, etc. available. To map the languages use the `pimcore_dam.backend.languageMapping` configuration.
 
 ```yaml
-asset_portal:
+blackbit_asset_portal:
   backend:
     languageMapping:
       en_GB: en
@@ -291,9 +295,10 @@ asset_portal:
 #### Display Asset Meta Data fields in list view {#display-asset-meta-fields-in-list}
 
 It is possible to display asset meta data in the asset list view. Use the configuration
-`asset_portal.backend.ui.listview.listview_metadata` to provide a list of meta data to be shown:
+`blackbit_asset_portal.backend.ui.listview.listview_metadata` to provide a list of meta data to be shown:
+
 ```yaml
-asset_portal:
+blackbit_asset_portal:
   backend:
     ui:
       listview:
@@ -307,10 +312,10 @@ With the configuration `pimcore_dam.backend.ui.listview.sort` the default option
 #### Add Custom Items to Sidebar Menu
 
 It is possible to add custom items to the sidebar menu in the left. To do so use the
-`asset_portal.backend.ui.sidebar` setting.
+`blackbit_asset_portal.backend.ui.sidebar` setting.
 
 ```yaml
-asset_portal:
+blackbit_asset_portal:
   backend:
     ui:
       sidebar:
@@ -329,41 +334,42 @@ asset_portal:
 
 #### Public Access User
 
-By default, access to the portal is only allowed for valid Pimcore users. Additionally, there is an option to allow access for guests. To configure the permissions for this public access, a mapping to a certain Pimcore user is necessary. This
-is configured with the `asset_portal.backend.user.guest` option. When set, the public access is enabled and public access users have the permissions of this user.
+By default, access to the portal is only allowed for valid Pimcore users. Additionally, there is an option to allow access for guests. To configure the permissions for this public access, a mapping to a certain Pimcore user is necessary. This is configured with
+the `blackbit_asset_portal.backend.user.guest`
+option. When set, the public access is enabled and public access users have the permissions of this user.
 
 ```yaml
-asset_portal:
+blackbit_asset_portal:
   backend:
     user: 'dam-guest'
 ```
 
 #### Asset Meta Data Visualization {#asset-meta-data-visualization}
 
-For the asset detail page, it is possible to configure the appearance of the asset meta data. Things like hidden asset meta data (`asset_portal.backend.metadata.hidden`), read only fields
-(`asset_portal.backend.metadata.readonly`), custom tabs (`asset_portal.backend.metadata.group`), required fields (`asset_portal.backend.metadata.required`) and custom dropdowns to fill input fields (`asset_portal.backend.metadata.selectable`) can be configured.
+For the asset detail page, it is possible to configure the appearance of the asset meta data. Things like hidden asset meta data (`blackbit_asset_portal.backend.metadata.hidden`), read only fields
+(`blackbit_asset_portal.backend.metadata.readonly`), custom tabs (`blackbit_asset_portal.backend.metadata.group`), required fields (`blackbit_asset_portal.backend.metadata.required`) and custom dropdowns to fill input fields (`blackbit_asset_portal.backend.metadata.selectable`) can be configured.
 
 #### Hide Users for Collection Sharing
 
-Collections can be shared with other users. By default, all users which have access to the portal are listed in the share dialog. To hide certain users (e.g. admin users) from this dialog use the `asset_portal.backend.collection.share.user.hide` configuration.
+Collections can be shared with other users. By default, all users which have access to the portal are listed in the share dialog. To hide certain users (e.g. admin users) from this dialog use the `blackbit_asset_portal.backend.collection.share.user.hide` configuration.
 
 #### Adding Custom Filters {#adding-custom-filters}
 
-The DAM Frontend ships with a couple of filters to filter assets in the list view. To add additional filters use the `asset_portal.filters` configuration.
+The DAM Frontend ships with a couple of filters to filter assets in the list view. To add additional filters use the `blackbit_asset_portal.filters` configuration.
 
 #### Enable Inline Image Editing {#inline-image-editing}
 
 An inline Image Editor (the same as in the Pimcore backend) can be activated for the asset detail page with the
-`asset_portal.extension.imageEditor.enabled` configuration.
+`blackbit_asset_portal.extension.imageEditor.enabled` configuration.
 
 #### Terms Accept Dialog in Share Frontend
 
 To configure the terms accept dialog in the Share Frontend use the
-`asset_portal.extension.shareAcceptTerms.*` configuration.
+`blackbit_asset_portal.extension.shareAcceptTerms.*` configuration.
 
 #### Configure Download Formats {#configure-download-formats}
 
-It is possible to preconfigure available download formats for image and video assets. These are configured in `asset_portal.download.*`. 
+It is possible to preconfigure available download formats for image and video assets. These are configured in `blackbit_asset_portal.download.*`.
 
 ## Dynamic Configuration
 
@@ -400,10 +406,11 @@ In your config.yaml you have to override the service:
 ```yml
 services:
     pimcore_dam.permissions.hook:
-        class:  AppBundle\Service\Asset\Dam\MetadataChangeHook
+        class: App\Service\Asset\Dam\MetadataChangeHook
 ```
 
 And then implement your custom logic:
+
 ```php
 
 class MetadataChangeHook extends DefaultMetadataChangeHook
@@ -423,8 +430,3 @@ class MetadataChangeHook extends DefaultMetadataChangeHook
     }
 }
 ```
-
-
-
-
-
